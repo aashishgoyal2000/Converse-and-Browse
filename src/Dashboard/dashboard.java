@@ -1,41 +1,103 @@
 package Dashboard;
 
+import java.awt.Color;
+import java.awt.Font;
+
 import javax.swing.JFrame;
-import javax.swing.BoxLayout;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
+import javax.swing.SwingConstants;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.LayoutStyle.ComponentPlacement;
+
 import Browser.Browser;
 import Notepad.*;
 import Chatting.*;
-//@SuppressWarnings("unused")
-public class dashboard extends JFrame{
 
-	private static final long serialVersionUID = 1L;
-	
-	dashboard() {
-		setSize(620, 700);
-		getContentPane().setLayout(new BoxLayout(getContentPane(), BoxLayout.X_AXIS));
-		
-		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
-		getContentPane().add(tabbedPane);
-		
-		Browser browser = new Browser();
-		chat chatting = new chat();
-		TextEditor notepd = new TextEditor();
-		
-		tabbedPane.add(browser);
-		tabbedPane.setToolTipTextAt(0, "Browser\r\n");
-		tabbedPane.add(chatting);
-		tabbedPane.add(notepd);
-		
-		tabbedPane.setTitleAt(0, "Browser");
-		tabbedPane.setTitleAt(1, "Converse");
-		tabbedPane.setTitleAt(2,  "Notepad");
-
-		setVisible(true);
+public class dashboard {
+	public static JLabel lblNewLabel;
+	String path = "D:\\\\College Java Specillization\\\\GUI Practise\\\\Converse And Browse\\\\src\\\\Dashboard\\\\";
+	dashboard()
+	{
+		JFrame f = new JFrame("Converse And Browse");
+		f.setFont(new Font("Dialog", Font.PLAIN, 25));
+		JPanel panel=new JPanel();   
+		panel.setBackground(Color.WHITE);
+        Icon icon = new ImageIcon(path + "logo.jpeg");
+        JLabel l=new JLabel(icon);
+        l.setFont(new Font("Tahoma", Font.PLAIN, 10));
+        l.setText("");
+        l.setHorizontalAlignment(SwingConstants.LEFT);
+	    JLabel l2=new JLabel("<html>Spending too much<br>time on switching<br>Applications?<br>We can fix that.<br>Now Browse,Converse and use an Editor within the same window.</html>");  
+	    l2.setForeground(Color.ORANGE);
+	    l2.setFont(new Font("Tahoma", Font.BOLD, 20));
+        Browser p1=new Browser();   
+        TextEditor p2=new TextEditor();  
+        chat p3=new chat();  
+        JTabbedPane tp=new JTabbedPane();
+        tp.setFont(new Font("Tahoma", Font.PLAIN, 22));
+        tp.setTabPlacement(JTabbedPane.LEFT);
+        tp.add("Home",panel);  
+         lblNewLabel = new JLabel("");
+        
+        JLabel lblNewLabel_1 = new JLabel("Contact Us:- (+91)9876543210");
+        lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 13));
+        GroupLayout gl_panel = new GroupLayout(panel);
+        gl_panel.setHorizontalGroup(
+        	gl_panel.createParallelGroup(Alignment.TRAILING)
+        		.addGroup(gl_panel.createSequentialGroup()
+        			.addContainerGap()
+        			.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
+        				.addComponent(l2, GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE)
+        				.addComponent(l, GroupLayout.PREFERRED_SIZE, 191, GroupLayout.PREFERRED_SIZE))
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
+        				.addGroup(gl_panel.createSequentialGroup()
+        					.addGap(88)
+        					.addComponent(lblNewLabel_1, GroupLayout.PREFERRED_SIZE, 212, GroupLayout.PREFERRED_SIZE))
+        				.addComponent(lblNewLabel, GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE))
+        			.addContainerGap())
+        );
+        gl_panel.setVerticalGroup(
+        	gl_panel.createParallelGroup(Alignment.TRAILING)
+        		.addGroup(gl_panel.createSequentialGroup()
+        			.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
+        				.addGroup(gl_panel.createSequentialGroup()
+        					.addComponent(lblNewLabel_1, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+        					.addGap(50)
+        					.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 346, GroupLayout.PREFERRED_SIZE))
+        				.addGroup(gl_panel.createSequentialGroup()
+        					.addComponent(l, GroupLayout.PREFERRED_SIZE, 76, GroupLayout.PREFERRED_SIZE)
+        					.addPreferredGap(ComponentPlacement.RELATED)
+        					.addComponent(l2, GroupLayout.PREFERRED_SIZE, 309, GroupLayout.PREFERRED_SIZE)))
+        			.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        panel.setLayout(gl_panel);
+        tp.add("Browse",p1);  
+        tp.add("Chat",p2);   
+        tp.add("Editor",p3);
+        GroupLayout groupLayout = new GroupLayout(f.getContentPane());
+        groupLayout.setHorizontalGroup(
+        	groupLayout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(groupLayout.createSequentialGroup()
+        			.addComponent(tp, GroupLayout.PREFERRED_SIZE, 607, GroupLayout.PREFERRED_SIZE)
+        			.addContainerGap(739, Short.MAX_VALUE))
+        );
+        groupLayout.setVerticalGroup(
+        	groupLayout.createParallelGroup(Alignment.LEADING)
+        		.addComponent(tp, GroupLayout.DEFAULT_SIZE, 485, Short.MAX_VALUE)
+        );
+        f.getContentPane().setLayout(groupLayout);
+        f.setSize(626,481);
+	    f.setVisible(true);
 	}
-
 	public static void main(String[] args) {
-
-		new dashboard().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	}
+	     new dashboard();
+	    new Slideshow();
 }
+}
+

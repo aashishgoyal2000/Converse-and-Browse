@@ -67,7 +67,7 @@ JComboBox fontBox;
 		openItem = new JMenuItem("Open");
 		saveItem = new JMenuItem("Save");
 		exitItem = new JMenuItem("Exit");
-		menuBar.setPreferredSize(new Dimension(600, 20));
+		menuBar.setPreferredSize(new Dimension(500, 20));
 		  
 		openItem.addActionListener(this);
 		saveItem.addActionListener(this);
