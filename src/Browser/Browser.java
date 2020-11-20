@@ -92,7 +92,7 @@ public class Browser extends JPanel{
 					.addPreferredGap(ComponentPlacement.UNRELATED)
 					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
 						.addComponent(addressBar)
-						.addComponent(jsp, GroupLayout.DEFAULT_SIZE, 454, Short.MAX_VALUE))
+						.addComponent(jsp, GroupLayout.DEFAULT_SIZE, 384, Short.MAX_VALUE))
 					.addContainerGap(12, Short.MAX_VALUE))
 		);
 		groupLayout.setVerticalGroup(
@@ -103,7 +103,7 @@ public class Browser extends JPanel{
 						.addGroup(groupLayout.createSequentialGroup()
 							.addComponent(addressBar, GroupLayout.PREFERRED_SIZE, 37, GroupLayout.PREFERRED_SIZE)
 							.addPreferredGap(ComponentPlacement.UNRELATED)
-							.addComponent(jsp, GroupLayout.PREFERRED_SIZE, 513, GroupLayout.PREFERRED_SIZE))
+							.addComponent(jsp, GroupLayout.PREFERRED_SIZE, 490, GroupLayout.PREFERRED_SIZE))
 						.addGroup(groupLayout.createSequentialGroup()
 							.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 37, GroupLayout.PREFERRED_SIZE)
 							.addPreferredGap(ComponentPlacement.RELATED)

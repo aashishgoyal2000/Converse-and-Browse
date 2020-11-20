@@ -35,9 +35,11 @@ public class dashboard {
 	    JLabel l2=new JLabel("<html>Spending too much<br>time on switching<br>Applications?<br>We can fix that.<br>Now Browse,Converse and use an Editor within the same window.</html>");  
 	    l2.setForeground(Color.ORANGE);
 	    l2.setFont(new Font("Tahoma", Font.BOLD, 20));
-        Browser p1=new Browser();   
+        
+	    Browser p1=new Browser();   
         TextEditor p2=new TextEditor();  
         chat p3=new chat();  
+        
         JTabbedPane tp=new JTabbedPane();
         tp.setFont(new Font("Tahoma", Font.PLAIN, 22));
         tp.setTabPlacement(JTabbedPane.LEFT);
@@ -78,21 +80,22 @@ public class dashboard {
         );
         panel.setLayout(gl_panel);
         tp.add("Browse",p1);  
-        tp.add("Chat",p2);   
-        tp.add("Editor",p3);
+        tp.add("Chat",p3);   
+        tp.add("Editor",p2);
+        
         GroupLayout groupLayout = new GroupLayout(f.getContentPane());
         groupLayout.setHorizontalGroup(
         	groupLayout.createParallelGroup(Alignment.LEADING)
         		.addGroup(groupLayout.createSequentialGroup()
-        			.addComponent(tp, GroupLayout.PREFERRED_SIZE, 607, GroupLayout.PREFERRED_SIZE)
-        			.addContainerGap(739, Short.MAX_VALUE))
+        			.addComponent(tp, GroupLayout.PREFERRED_SIZE, 605, GroupLayout.PREFERRED_SIZE)
+        			.addContainerGap(103, Short.MAX_VALUE))
         );
         groupLayout.setVerticalGroup(
         	groupLayout.createParallelGroup(Alignment.LEADING)
-        		.addComponent(tp, GroupLayout.DEFAULT_SIZE, 485, Short.MAX_VALUE)
+        		.addComponent(tp)
         );
         f.getContentPane().setLayout(groupLayout);
-        f.setSize(626,481);
+        f.setSize(626,626);
 	    f.setVisible(true);
 	}
 	public static void main(String[] args) {

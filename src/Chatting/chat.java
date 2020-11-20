@@ -56,7 +56,7 @@ public class chat extends JPanel {
 
 	public chat() {
 		
-        setBounds(0, 0, 620, 700);     
+        setBounds(0, 0, 520, 700);     
 		setLayout(null);
 	      
 	    l3.setBounds(50,30,100,30);
@@ -89,9 +89,9 @@ public class chat extends JPanel {
 			e2.printStackTrace();
 		}
         
-	    list2.setBounds(0,70,190,582);
+	    list2.setBounds(0,70,190,465);
         list2.setFont(font3);
-        b.setBounds(538,574,70,30); 
+        b.setBounds(441,504,70,30); 
 		b.setFont(font2);
 		b.setBorder(BorderFactory.createEmptyBorder());
 		b.setBackground(bg3);  
@@ -100,8 +100,8 @@ public class chat extends JPanel {
 		b4.setBounds(0,30,28,38);
 		b4.setFont(font2); 
 		b4.setBorder(BorderFactory.createEmptyBorder());
-		tf2.setBounds(202,573,324,31); 
-		area.setBounds(202,70,406,490);
+		tf2.setBounds(196,504,233,31); 
+		area.setBounds(196,70,312,421);
 		area.setFont(font2);
 		b3.setBounds(162,30,28,38);
 		b3.setFont(font2);
