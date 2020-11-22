@@ -19,36 +19,43 @@ import Notepad.*;
 import Chatting.*;
 
 public class dashboard {
+	JFrame f = new JFrame("Converse And Browse");
+	JPanel panel=new JPanel();   
 	public static JLabel lblNewLabel;
 	String path = "D:\\\\College Java Specillization\\\\GUI Practise\\\\Converse And Browse\\\\src\\\\Dashboard\\\\";
-	dashboard()
+	Browser p1=new Browser();   
+    TextEditor p2=new TextEditor();  
+    chat p3=new chat();  
+    JLabel l2=new JLabel("<html>Spending too much<br>time on switching<br>Applications?<br>We can fix that.<br>Now Browse,Converse and use an Editor within the same window.</html>");
+    JTabbedPane tp=new JTabbedPane();
+    JLabel lblNewLabel_1 = new JLabel("Contact Us:- (+91)9876543210");
+    
+    GroupLayout gl_panel = new GroupLayout(panel);
+    
+    
+    
+    dashboard()
 	{
-		JFrame f = new JFrame("Converse And Browse");
 		f.setFont(new Font("Dialog", Font.PLAIN, 25));
-		JPanel panel=new JPanel();   
 		panel.setBackground(Color.WHITE);
-        Icon icon = new ImageIcon(path + "logo.jpeg");
-        JLabel l=new JLabel(icon);
+     
+		Icon icon = new ImageIcon(getClass().getResource("logo.jpeg"));
+        
+		JLabel l=new JLabel(icon);
+        
         l.setFont(new Font("Tahoma", Font.PLAIN, 10));
         l.setText("");
         l.setHorizontalAlignment(SwingConstants.LEFT);
-	    JLabel l2=new JLabel("<html>Spending too much<br>time on switching<br>Applications?<br>We can fix that.<br>Now Browse,Converse and use an Editor within the same window.</html>");  
+	      
 	    l2.setForeground(Color.ORANGE);
-	    l2.setFont(new Font("Tahoma", Font.BOLD, 20));
-        
-	    Browser p1=new Browser();   
-        TextEditor p2=new TextEditor();  
-        chat p3=new chat();  
-        
-        JTabbedPane tp=new JTabbedPane();
+	    l2.setFont(new Font("Tahoma", Font.BOLD, 20));    
+            
         tp.setFont(new Font("Tahoma", Font.PLAIN, 22));
         tp.setTabPlacement(JTabbedPane.LEFT);
         tp.add("Home",panel);  
-         lblNewLabel = new JLabel("");
+        lblNewLabel = new JLabel("");
         
-        JLabel lblNewLabel_1 = new JLabel("Contact Us:- (+91)9876543210");
         lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 13));
-        GroupLayout gl_panel = new GroupLayout(panel);
         gl_panel.setHorizontalGroup(
         	gl_panel.createParallelGroup(Alignment.TRAILING)
         		.addGroup(gl_panel.createSequentialGroup()

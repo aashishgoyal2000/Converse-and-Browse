@@ -43,9 +43,8 @@ public class chat extends JPanel {
 	private Connection con = null;
 	private PreparedStatement pstmt = null;
 	private final String path = "D:\\\\College Java Specillization\\\\GUI Practise\\\\Converse And Browse\\\\src\\\\Chatting\\\\";
-	private Icon icon = new ImageIcon(path + "rsz_green_arrow.jpeg"), icon2 = new ImageIcon(path + "rsz_add_icon.jpeg"), icon3 = new ImageIcon(path + "rsz_delete.jpeg");
 	
-	private JButton b=new JButton(icon), b2=new JButton("Start a new chat"), b3=new JButton(icon2), b4=new JButton(icon3);
+	JButton b, b2, b3, b4;
 	private DefaultListModel<String> l2 = new DefaultListModel<>();
 	private JLabel l3=new JLabel("Contacts"), l1=new JLabel();
 	private Color bg3 = new Color(0,204,0);
@@ -56,6 +55,13 @@ public class chat extends JPanel {
 
 	public chat() {
 		
+		Icon icon = new ImageIcon(getClass().getResource("rsz_green_arrow.jpeg"));
+		Icon icon2 = new ImageIcon(getClass().getResource("rsz_add_icon.jpeg"));
+		Icon icon3 = new ImageIcon(getClass().getResource("rsz_delete.jpeg"));
+		b=new JButton(icon);
+		b2=new JButton("Start a new chat");
+		b3=new JButton(icon2);
+		b4=new JButton(icon3);
         setBounds(0, 0, 520, 700);     
 		setLayout(null);
 	      
